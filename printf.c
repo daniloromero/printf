@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 /**
  * _printf - gives format and print data
@@ -24,18 +25,18 @@ int _printf(const char *format, ...)
 	};
 
 	size = &m;
-	va_star (list, format);
+	va_start (list, format);
 	while (format[cformat])
 	{
 		if (format[cformat] == '%')
 		{
 			cformat++;
 			cfunc = 0;
-			while (funcs[cfunc])
+			while (funcs[cfunc].identifs)
 			{
 				if (format[cformat] == funcs[cfunc].identifs)
 				{
-					funcs[cfunc].print_funcs(list, buffer, *size);
+					funcs[cfunc].print_funcs(list, buffer, size);
 					break;
 				}
 				cfunc++;
@@ -44,11 +45,12 @@ int _printf(const char *format, ...)
 		else
 		{
 			buffer[*size] = format[cformat];
-			*size++;
+			*size += 1;
 		}
 		cformat++;
 	}
 	write(1, buffer, *size);
+	va_end(list);
 	free(buffer);
 	return(*size);
 }
