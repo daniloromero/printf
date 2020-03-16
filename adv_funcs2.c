@@ -1,0 +1,38 @@
+#include "holberton.h"
+#include <stdio.h>
+#include <stdarg.h>
+#include <stdlib.h>
+
+/**
+ * diccionary - Returns the required function
+ * Return: pointer to function required
+ */
+fmt *diccionary()
+{
+	fmt *dic = malloc(sizeof(fmt) * 6);
+
+	if (dic)
+	{
+		dic[0].identifs = 'c';
+		dic[0].print_funcs = print_char;
+		dic[1].identifs = 'i';
+		dic[1].print_funcs = print_int;
+		dic[2].identifs = 's';
+		dic[2].print_funcs = print_str;
+		dic[3].identifs = 'd';
+		dic[3].print_funcs = print_dec;
+		dic[4].identifs = '%';
+		dic[4].print_funcs = print_perc;
+		dic[5].identifs = 0;
+		dic[5].print_funcs = NULL;
+		return (dic);
+	}
+	return (NULL);
+}
+
+/**
+ *
+ * @list: list of arguments
+ * @buffer: Pointer to a buffer that stores chars to print
+ * @size: Pointer to a variable that counts the position in buffer
+ */
