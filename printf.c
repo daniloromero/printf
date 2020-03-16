@@ -9,15 +9,13 @@
  * @format: string to print
  * Return: integer size of printed string
  */
-
 int _printf(const char *format, ...)
 {
 	va_list list;
 	char *buffer = malloc(2048);
-	unsigned int cformat = 0, cfunc = 0, *size = 0, m = 0;
+	unsigned int cformat = 0, cfunc = 0, m = 0, *size = &m;
 	fmt *dic_f = diccionary(); /*pointer to function for finding function */
 
-	size = &m;
 	va_start(list, format);
 	while (format[cformat])
 	{
@@ -34,6 +32,8 @@ int _printf(const char *format, ...)
 				}
 				cfunc++;
 			}
+			if (!dic_f[cfunc].identifs)
+				unknown_i(format[cformat], buffer, size);
 		}
 		else
 		{
@@ -42,9 +42,9 @@ int _printf(const char *format, ...)
 		}
 		cformat++;
 	}
+	buffer[*size] = '\0';
 	write(1, buffer, *size);
 	va_end(list);
-	free(dic_f);
-	free(buffer);
+	free(dic_f), free(buffer);
 	return (*size);
 }
