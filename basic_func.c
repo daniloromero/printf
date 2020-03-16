@@ -64,7 +64,6 @@ void print_str(va_list list, char *buffer, unsigned int *size)
 		buffer[*size] = str[counter];
 		*size += 1;
 		counter++;
-
 	}
 }
 
@@ -92,12 +91,12 @@ void print_dec(va_list list, char *buffer, unsigned int *size)
 	int m = va_arg(list, int), i = 0, n = m, tmp;
 
 	if (m < 0)
-        {
-                m = m * (-1);
-                buffer[*size] = '-';
-                *size += 1;
-        }
-        n = m;
+	{
+		m = m * (-1);
+		buffer[*size] = '-';
+		*size += 1;
+	}
+	n = m;
 	while ((n / 10) > 0)
 	{
 		i++;

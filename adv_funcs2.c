@@ -31,8 +31,15 @@ fmt *diccionary()
 }
 
 /**
- *
- * @list: list of arguments
+ * unknown_i - stores unknown identifiers in buffer
+ * @p: char to print
  * @buffer: Pointer to a buffer that stores chars to print
  * @size: Pointer to a variable that counts the position in buffer
  */
+void unknown_i(char p, char *buffer, unsigned int *size)
+{
+	buffer[*size] = '%';
+	*size += 1;
+	buffer[*size] = p;
+	*size += 1;
+}

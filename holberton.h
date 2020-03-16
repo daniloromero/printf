@@ -21,5 +21,6 @@ void print_str(va_list list, char *buffer, unsigned int *size);
 void print_dec(va_list list, char *buffer, unsigned int *size);
 void print_perc(va_list list, char *buffer, unsigned int *size);
 fmt *diccionary();
+void unknown_i(char p, char *buffer, unsigned int *size);
 
 #endif
