@@ -9,38 +9,31 @@
  * @format: string to print
  * Return: integer size of printed string
  */
-
 int _printf(const char *format, ...)
 {
 	va_list list;
-	char *buffer = malloc (2048);
-	unsigned int cformat = 0, cfunc = 0, *size = 0, m = 0;
-	fmt funcs[] ={
-		{'c', print_char},
-		{'i', print_int},
-		{'s', print_str},
-		{'d', print_dec},
-		{'%', print_perc},
-		{0, NULL}
-	};
+	char *buffer = malloc(2048);
+	unsigned int cformat = 0, cfunc = 0, m = 0, *size = &m;
+	fmt *dic_f = diccionary(); /*pointer to function for finding function */
 
-	size = &m;
-	va_start (list, format);
+	va_start(list, format);
 	while (format[cformat])
 	{
 		if (format[cformat] == '%')
 		{
 			cformat++;
 			cfunc = 0;
-			while (funcs[cfunc].identifs)
+			while (dic_f[cfunc].identifs)
 			{
-				if (format[cformat] == funcs[cfunc].identifs)
+				if (format[cformat] == dic_f[cfunc].identifs)
 				{
-					funcs[cfunc].print_funcs(list, buffer, size);
+					dic_f[cfunc].print_funcs(list, buffer, size);
 					break;
 				}
 				cfunc++;
 			}
+			if (!dic_f[cfunc].identifs)
+				unknown_i(format[cformat], buffer, size);
 		}
 		else
 		{
@@ -49,8 +42,9 @@ int _printf(const char *format, ...)
 		}
 		cformat++;
 	}
+	buffer[*size] = '\0';
 	write(1, buffer, *size);
 	va_end(list);
-	free(buffer);
-	return(*size);
+	free(dic_f), free(buffer);
+	return (*size);
 }
