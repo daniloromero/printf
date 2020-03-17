@@ -12,11 +12,11 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
-	char *buffer = malloc(1024);
+	char *buffer = malloc(2048);
 	unsigned int cformat = 0, cfunc = 0, m = 0, *size = &m;
 	fmt *dic_f = diccionary(); /*pointer to function for finding function */
 
-	if (!buffer)
+	if (!buffer || !format || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	va_start(list, format);
 	while (format && format[cformat])
