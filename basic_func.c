@@ -67,7 +67,6 @@ void print_str(va_list list, char *buffer, unsigned int *size)
 		*size += 1;
 		counter++;
 	}
-	
 }
 
 /**
