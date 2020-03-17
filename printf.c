@@ -12,7 +12,7 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
-	char *buffer = malloc(2048);
+	char *buffer = malloc(1024);
 	unsigned int cformat = 0, cfunc = 0, m = 0, *size = &m;
 	fmt *dic_f = diccionary(); /*pointer to function for finding function */
 
