@@ -59,12 +59,15 @@ void print_str(va_list list, char *buffer, unsigned int *size)
 	char *str = va_arg(list, int);
 	int counter = 0;
 
+	if (str == NULL)
+		str = "(null)";
 	while (str[counter])
 	{
 		buffer[*size] = str[counter];
 		*size += 1;
 		counter++;
 	}
+	
 }
 
 /**
