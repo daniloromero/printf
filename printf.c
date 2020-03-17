@@ -16,8 +16,10 @@ int _printf(const char *format, ...)
 	unsigned int cformat = 0, cfunc = 0, m = 0, *size = &m;
 	fmt *dic_f = diccionary(); /*pointer to function for finding function */
 
+	if (!buffer)
+		return (-1);
 	va_start(list, format);
-	while (format[cformat])
+	while (format && format[cformat])
 	{
 		if (format[cformat] == '%')
 		{
