@@ -23,7 +23,7 @@ void print_char(va_list list, char *buffer, unsigned int *size)
  */
 void print_int(va_list list, char *buffer, unsigned int *size)
 {
-	int m = va_arg(list, int), i = 0, n, tmp;
+	long int m = va_arg(list, int), i = 0, n, tmp;
 
 	if (m < 0)
 	{
@@ -90,7 +90,7 @@ char *buffer, unsigned int *size)
  */
 void print_dec(va_list list, char *buffer, unsigned int *size)
 {
-	int m = va_arg(list, int), i = 0, n = m, tmp;
+	long int m = va_arg(list, int), i = 0, n = m, tmp;
 
 	if (m < 0)
 	{
