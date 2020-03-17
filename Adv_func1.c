@@ -5,13 +5,13 @@
 
 /**
  *print_binary - unsigned int argument is converted to binary
- *@ list: argument
+ *@list: argument
  *@buffer: memory storage for output
  *@size: buffer current position
  */
 void print_binary(va_list list, char *buffer, unsigned int *size)
 {
-	int m = va_arg(list, unsigned int), i = 0, n , tmp;
+	int m = va_arg(list, unsigned int), i = 0, n, tmp;
 
 	if (m < 0)
 	{
@@ -36,7 +36,7 @@ void print_binary(va_list list, char *buffer, unsigned int *size)
 }
 /**
  *print_unsignedint - print unsigned integers
- *@list: arguments 
+ *@list: arguments
  *@buffer: memory storage fo output
  *@size: buffer current position
  */
@@ -55,7 +55,7 @@ void print_unsignedint(va_list list, char *buffer, unsigned int *size)
 	{
 		buffer[*size + i - 1] = (m % 10) + '0';
 		i--;
-		m = (m /10);
+		m = (m / 10);
 	}
 	*size += tmp;
 }

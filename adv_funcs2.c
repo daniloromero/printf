@@ -9,7 +9,7 @@
  */
 fmt *diccionary()
 {
-	fmt *dic = malloc(sizeof(fmt) * 6);
+	fmt *dic = malloc(sizeof(fmt) * 9);
 
 	if (dic)
 	{
@@ -22,9 +22,15 @@ fmt *diccionary()
 		dic[3].identifs = 'd';
 		dic[3].print_funcs = print_dec;
 		dic[4].identifs = '%';
-		dic[4].print_funcs = print_perc;
-		dic[5].identifs = 0;
-		dic[5].print_funcs = NULL;
+		dic[4].print_funcs = print_dec;
+		dic[5].identifs = 'b';
+		dic[5].print_funcs = print_binary;
+		dic[6].identifs = 'u';
+		dic[6].print_funcs = print_unsignedint;
+		dic[7].identifs = 'o';
+		dic[7].print_funcs = print_octal;
+		dic[8].identifs = 0;
+		dic[8].print_funcs = NULL;
 		return (dic);
 	}
 	return (NULL);

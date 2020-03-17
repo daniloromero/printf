@@ -5,13 +5,13 @@
 
 /**
  *print_octal - unsigned int argument is converted to binary
- *@ list: argument
+ *@list: argument
  *@buffer: memory storage for output
  *@size: buffer current position
  */
 void print_octal(va_list list, char *buffer, unsigned int *size)
 {
-	unsigned int m = va_arg(list, unsigned int), i = 0, n , tmp;
+	unsigned int m = va_arg(list, unsigned int), i = 0, n, tmp;
 
 	n = m;
 	while (n > 0)
@@ -30,11 +30,11 @@ void print_octal(va_list list, char *buffer, unsigned int *size)
 }
 /**
  *print_hexadec - print unsigned integers lower hexadecimal
- *@list: arguments 
+ *@list: arguments
  *@buffer: memory storage fo output
  *@size: buffer current position
  */
-void print_hexadec(va_list list, char *buffer, unsigned int *size)
+/*void print_hexadec(va_list list, char *buffer, unsigned int *size)
 {
 	unsigned int m = va_arg(list, unsigned int), i = 0, n = m, tmp, hexa;
 
@@ -47,18 +47,18 @@ void print_hexadec(va_list list, char *buffer, unsigned int *size)
 	while (i > 0)
 	{
 		hexa = m % 16;
-		buffer[*size + i - 1] = hexa < 10 ? hexa + '0' : (hexa - 10) + 'a';
+		buffer[*size + (i - 1)] = hexa < 10 ? hexa + '0' : (hexa - 10) + 'a';
 		i--;
-		m = (m /16);
+		m = (m / 16);
 	}
 	*size += tmp;
 }
-/**
+**
  *print_HexaDec - print unsigned integers UPPER Hexadecimal
- *@list: arguments 
+ *@list: arguments
  *@buffer: memory storage fo output
  *@size: buffer current position
- */
+ *
 void print_HexaDec(va_list list, char *buffer, unsigned int *size)
 {
 	unsigned int m = va_arg(list, unsigned int), i = 0, n = m, tmp, Hexa;
@@ -74,7 +74,7 @@ void print_HexaDec(va_list list, char *buffer, unsigned int *size)
 		Hexa = m % 16;
 		buffer[*size + i - 1] = Hexa < 10 ? Hexa + '0' : (Hexa - 10) + 'a';
 		i--;
-		m = (m /16);
+		m = (m / 16);
 	}
 	*size += tmp;
-}
+}*/
