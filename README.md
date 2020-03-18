@@ -1,3 +1,7 @@
+
+# _printf project
+## made for Holberton Software Engineering program
+
 x11. C - printf
 
 Foundations - Low-level programming & Algorithm.
@@ -23,25 +27,25 @@ Getting Started
     Note that we will not provide the_putchar function for this project
 
 More Info
-Authorized functions and macros
+>Authorized functions and macros
 
-    write (man 2 write)
-    malloc (man 3 malloc)
-    free (man 3 free)
-    va_start (man 3 va_start)
-    va_end (man 3 va_end)
-    va_copy (man 3 va_copy)
-    va_arg (man 3 va_arg)
+ *   write (man 2 write)
+ *   malloc (man 3 malloc)
+ *   free (man 3 free)
+ *   va_start (man 3 va_start)
+ *   va_end (man 3 va_end)
+ *   va_copy (man 3 va_copy)
+ *   va_arg (man 3 va_arg)
 
-Compilation
+> Compilation
 
     Your code will be compiled this way:
-
+```
 $ gcc -Wall -Werror -Wextra -pedantic *.c
+```
+> Example of test file used:
 
-    As a consequence, be careful not to push any c file containing a main function in the root directory of your project (you could have a test folder containing all your tests files including main functions) Our main files will include your main header file (holberton.h): #include holberton.h You might want to look at the gcc flag -Wno-format when testing with your /_printf and the standard printf. Example of test file that you could use:
 
-alex@ubuntu:~/c/printf$ cat main.c
 #include <limits.h>
 #include <stdio.h>
 #include "holberton.h"
@@ -86,36 +90,32 @@ int main(void)
     printf("Unknown:[%r]\n");
     return (0);
 }
-alex@ubuntu:~/c/printf$ gcc -Wall -Wextra -Werror -pedantic -Wno-format *.c
-alex@ubuntu:~/c/printf$ ./printf
-Let's try to printf a simple sentence.
-Let's try to printf a simple sentence.
-Length:[39, 39]
-Length:[39, 39]
-Negative:[-762534]
-Negative:[-762534]
-Unsigned:[2147484671]
-Unsigned:[2147484671]
-Unsigned octal:[20000001777]
-Unsigned octal:[20000001777]
-Unsigned hexadecimal:[800003ff, 800003FF]
-Unsigned hexadecimal:[800003ff, 800003FF]
-Character:[H]
-Character:[H]
-String:[I am a string !]
-String:[I am a string !]
-Address:[0x7ffe637541f0]
-Address:[0x7ffe637541f0]
-Percent:[%]
-Percent:[%]
-Len:[12]
-Len:[12]
-Unknown:[%r]
-Unknown:[%r]
-alex@ubuntu:~/c/printf$
+> Expected return
 
-    We strongly encourage you to work all together on a set of tests
-    If the task does not specify what to do with an edge case, do the same as printf
+Let's try to printf a simple sentence.
+Let's try to printf a simple sentence.
+Length:[39, 39]
+Length:[39, 39]
+Negative:[-762534]
+Negative:[-762534]
+Unsigned:[2147484671]
+Unsigned:[2147484671]
+Unsigned octal:[20000001777]
+Unsigned octal:[20000001777]
+Unsigned hexadecimal:[800003ff, 800003FF]
+Unsigned hexadecimal:[800003ff, 800003FF]
+Character:[H]
+Character:[H]
+String:[I am a string !]
+String:[I am a string !]
+Address:[0x7ffe637541f0]
+Address:[0x7ffe637541f0]
+Percent:[%]
+Percent:[%]
+Len:[12]
+Len:[12]
+Unknown:[%r]
+Unknown:[%r]
 
 
 
