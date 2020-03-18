@@ -34,40 +34,44 @@ void print_octal(va_list list, char *buffer, unsigned int *size)
  *@buffer: memory storage fo output
  *@size: buffer current position
  */
-/*void print_hexadec(va_list list, char *buffer, unsigned int *size)
+void print_hexadec(va_list list, char *buffer, unsigned int *size)
 {
-	unsigned int m = va_arg(list, unsigned int), i = 0, n = m, tmp, hexa;
+	int m = va_arg(list, unsigned int), i = 0, n = m, tmp;
 
 	while ((n / 16) > 0)
 	{
 		i++;
 		n = (n / 16);
 	}
+	i++;
 	tmp = i;
 	while (i > 0)
 	{
-		hexa = m % 16;
-		buffer[*size + (i - 1)] = hexa < 10 ? hexa + '0' : (hexa - 10) + 'a';
+		if ((m % 16) < 10)
+			buffer[*size + (i - 1)] =  (m % 16) + 48;
+		else
+			buffer[*size + (i - 1)] = (m % 16) + 55;
 		i--;
 		m = (m / 16);
 	}
 	*size += tmp;
 }
-**
+/**
  *print_HexaDec - print unsigned integers UPPER Hexadecimal
  *@list: arguments
  *@buffer: memory storage fo output
  *@size: buffer current position
- *
+ */
 void print_HexaDec(va_list list, char *buffer, unsigned int *size)
 {
-	unsigned int m = va_arg(list, unsigned int), i = 0, n = m, tmp, Hexa;
+	int m = va_arg(list, unsigned int), i = 0, n = m, tmp, Hexa;
 
 	while ((n / 16) > 0)
 	{
 		i++;
 		n = (n / 16);
 	}
+	i++;
 	tmp = i;
 	while (i > 0)
 	{
@@ -77,4 +81,4 @@ void print_HexaDec(va_list list, char *buffer, unsigned int *size)
 		m = (m / 16);
 	}
 	*size += tmp;
-}*/
+}
