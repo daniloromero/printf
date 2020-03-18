@@ -16,6 +16,8 @@ The _printf function accepts a variable number of  ARGUMENTS and prints them  to
 %d prints deimal number
 %b prints integer in binary format
 %o prints unsigned integer in octal format
+%h prints hexadecimal format lower case letters
+%H prints HEXADECIMAL format UPPER CASE LETTERS
 %% a single %
 
 .SH SEE ALSO
