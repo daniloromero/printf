@@ -25,13 +25,10 @@ void unknown_i(char p, char *buffer, unsigned int *size);
 void print_binary(va_list list, char *buffer, unsigned int *size);
 void print_unsignedint(va_list list, char *buffer, unsigned int *size);
 void print_octal(va_list list, char *buffer, unsigned int *size);
-<<<<<<< HEAD
 void print_hexadec(va_list list, char *buffer, unsigned int *size);
 void print_HexaDec(va_list list, char *buffer, unsigned int *size);
-=======
 void print_rev(va_list list, char *buffer, unsigned int *size);
 void print_rot13(va_list list, char *buffer, unsigned int *size);
 void print_addr(va_list list, char *buffer, unsigned int *size);
 
->>>>>>> anderson
 #endif

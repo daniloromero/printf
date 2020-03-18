@@ -9,7 +9,7 @@
  */
 fmt *diccionary()
 {
-	fmt *dic = malloc(sizeof(fmt) * 14);
+	fmt *dic = malloc(sizeof(fmt) * 13);
 
 	if (dic)
 	{
@@ -37,10 +37,8 @@ fmt *diccionary()
 		dic[10].print_funcs = print_rev;
 		dic[11].identifs = 'R';
 		dic[11].print_funcs = print_rot13;
-		dic[12].identifs = 'p';
-		dic[12].print_funcs = print_addr;
-		dic[13].identifs = 0;
-		dic[13].print_funcs = NULL;
+		dic[12].identifs = 0;
+		dic[12].print_funcs = NULL;
 		return (dic);
 	}
 	return (NULL);
