@@ -19,6 +19,7 @@ The _printf function accepts a variable number of  ARGUMENTS and prints them  to
 %h prints hexadecimal format lower case letters
 %H prints HEXADECIMAL format UPPER CASE LETTERS
 %r prints reversed string
+%R prints string rot13'ed string
 %% a single %
 
 .SH SEE ALSO
