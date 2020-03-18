@@ -18,6 +18,7 @@ The _printf function accepts a variable number of  ARGUMENTS and prints them  to
 %o prints unsigned integer in octal format
 %h prints hexadecimal format lower case letters
 %H prints HEXADECIMAL format UPPER CASE LETTERS
+%r prints reversed string
 %% a single %
 
 .SH SEE ALSO
