@@ -1,6 +1,6 @@
 .TH man 2 "15 March 2020" "0.32" "_printf function man page"
 .SH NAME
-.B _printf 
+.B_printf
 \- format and print to standard ouput
 .SH SYNOPSIS
 #include "holberton.h"
@@ -9,8 +9,15 @@
 .SH DESCRIPTION
 The _printf function accepts a variable number of  ARGUMENTS and prints them  to standard output according to FORMAT.
 .SH OPTIONS
-.B OPTIONS
+.B FORMATS
+%c prints character
+%i prints integer
+%s prints string
+%d prints deimal number
+%b prints integer in binary format
+%o prints unsigned integer in octal format
 %% a single %
+
 .SH SEE ALSO
 .I printf(1), printf(3), sprintf(), snprintf(), vsprintf(), vsnprintf().
 .SH BUGS
