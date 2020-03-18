@@ -11,7 +11,7 @@
  */
 void print_octal(va_list list, char *buffer, unsigned int *size)
 {
-	unsigned int m = va_arg(list, unsigned int), i = 0, n, tmp;
+	long unsigned int m = va_arg(list, unsigned int), i = 0, n, tmp;
 
 	n = m;
 	while (n > 0)
@@ -36,7 +36,7 @@ void print_octal(va_list list, char *buffer, unsigned int *size)
  */
 void print_hexadec(va_list list, char *buffer, unsigned int *size)
 {
-	int m = va_arg(list, unsigned int), i = 0, n = m, tmp;
+	long int m = va_arg(list, unsigned int), i = 0, n = m, tmp;
 
 	while ((n / 16) > 0)
 	{
@@ -64,7 +64,7 @@ void print_hexadec(va_list list, char *buffer, unsigned int *size)
  */
 void print_HexaDec(va_list list, char *buffer, unsigned int *size)
 {
-	int m = va_arg(list, unsigned int), i = 0, n = m, tmp, Hexa;
+	long int m = va_arg(list, unsigned int), i = 0, n = m, tmp, Hexa;
 
 	while ((n / 16) > 0)
 	{

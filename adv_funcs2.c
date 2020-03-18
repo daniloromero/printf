@@ -30,9 +30,9 @@ fmt *diccionary()
 		dic[7].identifs = 'o';
 		dic[7].print_funcs = print_octal;
 		dic[8].identifs = 'x';
-		dic[8].print_funcs = print_unsignedint;
+		dic[8].print_funcs = print_hexadec;
 		dic[9].identifs = 'X';
-		dic[9].print_funcs = print_unsignedint;
+		dic[9].print_funcs = print_HexaDec;
 		dic[10].identifs = 'r';
 		dic[10].print_funcs = print_rev;
 		dic[11].identifs = 'R';
