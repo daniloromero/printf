@@ -11,7 +11,7 @@
  */
 void print_binary(va_list list, char *buffer, unsigned int *size)
 {
-	int m = va_arg(list, unsigned int), i = 0, n, tmp;
+	long int m = va_arg(list, unsigned int), i = 0, n, tmp;
 
 	if (m == 0)
 	{
