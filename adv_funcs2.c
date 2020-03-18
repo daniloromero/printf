@@ -9,7 +9,7 @@
  */
 fmt *diccionary()
 {
-	fmt *dic = malloc(sizeof(fmt) * 11);
+	fmt *dic = malloc(sizeof(fmt) * 14);
 
 	if (dic)
 	{
@@ -33,8 +33,14 @@ fmt *diccionary()
 		dic[8].print_funcs = print_unsignedint;
 		dic[9].identifs = 'X';
 		dic[9].print_funcs = print_unsignedint;
-		dic[10].identifs = 0;
-		dic[10].print_funcs = NULL;
+		dic[10].identifs = 'r';
+		dic[10].print_funcs = print_rev;
+		dic[11].identifs = 'R';
+		dic[11].print_funcs = print_rot13;
+		dic[12].identifs = 'p';
+		dic[12].print_funcs = print_addr;
+		dic[13].identifs = 0;
+		dic[13].print_funcs = NULL;
 		return (dic);
 	}
 	return (NULL);
@@ -52,4 +58,59 @@ void unknown_i(char p, char *buffer, unsigned int *size)
 	*size += 1;
 	buffer[*size] = p;
 	*size += 1;
+}
+
+/**
+ * print_rev - stores reversed strings
+ * @list: list of arguments
+ * @buffer: Pointer to a buffer that stores chars to print
+ * @size: Pointer to a variable that counts the position in buffer
+ */
+void print_rev(va_list list, char *buffer, unsigned int *size)
+{
+	char *str = va_arg(list, int);
+	int counter = 0;
+
+	if (str == NULL)
+		str = "(null)";
+	while (str[counter])
+		counter++;
+	while (counter >= 0)
+	{
+		buffer[*size] = str[counter];
+		*size += 1;
+		counter--;
+	}
+}
+
+/**
+ * print_rot13 - stores reversed strings
+ * @list: list of arguments
+ * @buffer: Pointer to a buffer that stores chars to print
+ * @size: Pointer to a variable that counts the position in buffer
+ */
+void print_rot13(va_list list, char *buffer, unsigned int *size)
+{
+	char *str = va_arg(list, int);
+	int counter = 0;
+
+	if (str == NULL)
+		str = "(null)";
+	while (str[counter])
+	{
+		if ((str[counter] > 64 && str[counter] < 78)
+		    || (str[counter] > 96 && str[counter] < 110))
+		{
+			buffer[*size] = str[counter] + 13;
+			*size += 1;
+			counter++;
+		}
+		else if ((str[counter] > 77 && str[counter] < 91)
+			 || (str[counter] > 109 && str[counter] < 123))
+		{
+			buffer[*size] = str[counter] - 13;
+			*size += 1;
+			counter++;
+		}
+	}
 }
