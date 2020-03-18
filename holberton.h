@@ -22,5 +22,8 @@ void print_dec(va_list list, char *buffer, unsigned int *size);
 void print_perc(va_list list, char *buffer, unsigned int *size);
 fmt *diccionary();
 void unknown_i(char p, char *buffer, unsigned int *size);
+void print_binary(va_list list, char *buffer, unsigned int *size);
+void print_unsignedint(va_list list, char *buffer, unsigned int *size);
+void print_octal(va_list list, char *buffer, unsigned int *size);
 
 #endif
