@@ -1,3 +1,7 @@
+
+# _printf project
+## made for Holberton Software Engineering program
+
 x11. C - printf
 
 Foundations - Low-level programming & Algorithm.
@@ -21,27 +25,61 @@ Getting Started
     Don’t forget to push your header file.
     All your header files should be include guarded.
     Note that we will not provide the_putchar function for this project
+=======
+# _printf project
+## made for Holberton Software Engineering program
 
-More Info
-Authorized functions and macros
+> Functions and macros allowed:
 
-    write (man 2 write)
-    malloc (man 3 malloc)
-    free (man 3 free)
-    va_start (man 3 va_start)
-    va_end (man 3 va_end)
-    va_copy (man 3 va_copy)
-    va_arg (man 3 va_arg)
+* write (man 2 write)
+* malloc (man 3 malloc)
+* free (man 3 free)
+* va_start (man 3 va_start)
+* va_end (man 3 va_end)
+* va_copy (man 3 va_copy)
+* va_arg (man 3 va_arg)
 
-Compilation
+> Compilation way:
+
+```
+$ gcc -Wall -Werror -Wextra -pedantic *.c
+```
+
+
+> Format specifiers:
+
+**Specifier - Type**
+
+<<<<<<< HEAD
+* c         - char
+* i         - integer
+* s         - string
+* d         - decimal
+* %         - percent
+* b         - binary
+* u         - octal
+* o         - decimal
+* x         - Hexadecimal lowercase
+* X         - Hexadecimal uppercase
+
+>Authorized functions and macros
+
+ *   write (man 2 write)
+ *   malloc (man 3 malloc)
+ *   free (man 3 free)
+ *   va_start (man 3 va_start)
+ *   va_end (man 3 va_end)
+ *   va_copy (man 3 va_copy)
+ *   va_arg (man 3 va_arg)
+
+> Compilation
 
     Your code will be compiled this way:
-
+```
 $ gcc -Wall -Werror -Wextra -pedantic *.c
+```
+> Example of test file used:
 
-    As a consequence, be careful not to push any c file containing a main function in the root directory of your project (you could have a test folder containing all your tests files including main functions) Our main files will include your main header file (holberton.h): #include holberton.h You might want to look at the gcc flag -Wno-format when testing with your /_printf and the standard printf. Example of test file that you could use:
-
-alex@ubuntu:~/c/printf$ cat main.c
 #include <limits.h>
 #include <stdio.h>
 #include "holberton.h"
@@ -53,6 +91,7 @@ alex@ubuntu:~/c/printf$ cat main.c
  */
 int main(void)
 {
+<<<<<<< HEAD
     int len;
     int len2;
     unsigned int ui;
@@ -86,8 +125,8 @@ int main(void)
     printf("Unknown:[%r]\n");
     return (0);
 }
-alex@ubuntu:~/c/printf$ gcc -Wall -Wextra -Werror -pedantic -Wno-format *.c
-alex@ubuntu:~/c/printf$ ./printf
+> Expected return
+
 Let's try to printf a simple sentence.
 Let's try to printf a simple sentence.
 Length:[39, 39]
@@ -112,10 +151,64 @@ Len:[12]
 Len:[12]
 Unknown:[%r]
 Unknown:[%r]
-alex@ubuntu:~/c/printf$
-
-    We strongly encourage you to work all together on a set of tests
-    If the task does not specify what to do with an edge case, do the same as printf
 
 
+
+=======
+        int len, len2, num = -10, num2 = -10;
+        unsigned int ui;
+        void *addr;
+        char *empty = NULL;
+        char p = '\0';
+
+        len = _printf("\"\\Let's try to printf a simple sentence.\n");
+        len2 = printf("\"\\Let's try to printf a simple sentence.\n");
+        ui = (unsigned int)INT_MAX + 1024;
+        addr = (void *)0x7ffe637541f0;
+        _printf("Length:[%d, %i]\n", len, len);
+        printf("Length:[%d, %i]\n", len2, len2);
+        _printf("String + Length:[%s, %i]\n", "\"\\Let's try to printf a simple sentence", len);
+        printf("String + Length:[%s, %i]\n", "\"\\Let's try to printf a simple sentence", len);
+        _printf("negative con d & i:[%d, %i]\n", num, num2);
+        printf("negative con d & i:[%d, %i]\n", num, num2);
+        _printf("Negative:[%d]\n", -762534);
+        printf("Negative:[%d]\n", -762534);
+        _printf("Unsigned:[%u]\n", ui);
+        printf("Unsigned:[%u]\n", ui);
+        _printf("Unsigned octal:[%o]\n", ui);
+        printf("Unsigned octal:[%o]\n", ui);
+        _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
+        printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
+        _printf("Character:[%c]\n", 'H');
+        printf("Character:[%c]\n", 'H');
+	_printf("String:[%s]\n", "I am a string !");
+        printf("String:[%s]\n", "I am a string !");
+        _printf("Address:[%p]\n", addr);
+        printf("Address:[%p]\n", addr);
+        len = _printf("Percent:[%%]\n");
+        len2 = printf("Percent:[%%]\n");
+        _printf("Len:[%d]\n", len);
+        printf("Len:[%d]\n", len2);
+        _printf("Unknown:[%r]\n");
+        printf("Unknown:[%r]\n");
+        len = _printf("Percent:[%%%%]\n");
+        len2 = printf("Percent:[%%%%]\n");
+        _printf("Len:[%d]\n", len);
+        printf("Len:[%d]\n", len2);
+        _printf("Empty string:[%s]\n", empty);
+        printf("Empty string printf original:[%s]\n", empty);
+        _printf("Empty string:[%c]\n", p);
+        printf("Empty string printf original:[%c]\n", p);
+        _printf("int:[%i]\n", INT_MIN);
+        printf("int:[%i]\n", INT_MIN);
+        return (0);
+}
+
+
+---
+
+> Authors:
+
+[Danilo Romero] https://github.com/daniloromero
+[Anderson Castiblanco] https://github.com/andergcp
 
