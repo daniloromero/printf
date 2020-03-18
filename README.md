@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 # _printf project
 ## made for Holberton Software Engineering program
@@ -45,7 +44,7 @@ Getting Started
 ```
 $ gcc -Wall -Werror -Wextra -pedantic *.c
 ```
->>>>>>> anderson
+
 
 > Format specifiers:
 
@@ -80,22 +79,6 @@ $ gcc -Wall -Werror -Wextra -pedantic *.c
 $ gcc -Wall -Werror -Wextra -pedantic *.c
 ```
 > Example of test file used:
-
-=======
-* c	    -
-* i	    -
-* s	    -
-* d	    -
-* %	    -
-* b	    -
-* u	    -
-* o	    -
-* x	    -
-* X	    -
-
-> File used for testing:
----
->>>>>>> anderson
 
 #include <limits.h>
 #include <stdio.h>
@@ -227,5 +210,5 @@ Unknown:[%r]
 > Authors:
 
 [Danilo Romero] https://github.com/daniloromero
-[Anderson Castiblanco] 
->>>>>>> anderson
+[Anderson Castiblanco] https://github.com/andergcp
+
