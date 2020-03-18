@@ -26,7 +26,21 @@ Getting Started
     All your header files should be include guarded.
     Note that we will not provide the_putchar function for this project
 
-More Info
+> Format specifiers:
+
+**Specifier - Type**
+
+* c         - char
+* i         - integer
+* s         - string
+* d         - decimal
+* %         - percent
+* b         - binary
+* u         - octal
+* o         - decimal
+* x         - Hexadecimal lowercase
+* X         - Hexadecimal uppercase
+
 >Authorized functions and macros
 
  *   write (man 2 write)
