@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 	fmt *dic_f = diccionary(); /*pointer to function for finding function */
 
 	if (!buffer || !format || (format[0] == '%' && format[1] == '\0'))
-		return (-1);
+		return (free(buffer), -1);
 	va_start(list, format);
 	while (format && format[cformat])
 	{
