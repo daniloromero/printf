@@ -73,6 +73,7 @@ void print_rev(va_list list, char *buffer, unsigned int *size)
 		str = "(null)";
 	while (str[counter])
 		counter++;
+	counter--;
 	while (counter >= 0)
 	{
 		buffer[*size] = str[counter];
@@ -107,6 +108,12 @@ void print_rot13(va_list list, char *buffer, unsigned int *size)
 			 || (str[counter] > 109 && str[counter] < 123))
 		{
 			buffer[*size] = str[counter] - 13;
+			*size += 1;
+			counter++;
+		}
+		else
+		{
+			buffer[*size] = str[counter];
 			*size += 1;
 			counter++;
 		}
