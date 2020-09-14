@@ -1,214 +1,108 @@
+# _printf Project
+[![Contributors][contributors-shield]][contributors-url]
 
-# _printf project
-## made for Holberton Software Engineering program
+<h1 align="center"> _printf Project </h1>
 
-x11. C - printf
+### Description
+In _printf project we code from zero our own custom printf function. Native printf function allows you to print with certain formats. We handle most basic format so you can print chars, strings, positive and negative numbers, hex, octa and binary numbers among other formats.
+You can see man 3 of printf to understand how printf works.
 
-Foundations - Low-level programming & Algorithm.
-Project to be done in teams of 2 people (your team: Anderson Castiblanco, Danilo Romero)
-Background Context
+### Usage
+Compile
 
-    Write your own printf function.
+	gcc -Wall -Werror -Wextra -pedantic *.c -o executable
+Prototype
 
-Getting Started
+	int _printf(const char *format, ...)
 
-    Allowed editors: vi, vim, emacs.
-    All your files will be compiled on Ubuntu 14.04 LTS.
-    Your programs and functions will be compiled with gcc 4.8.4 using the flags -Wall -Werror -Wextra and -pedantic.
-    All your files should end with a new line.
-    A README.md file, at the root of the folder of the project is mandatory.
-    Your code should use the Betty style. It will be checked using betty-style.pl and betty-doc.pl.
-    You are not allowed to use global variables.
-    No more than 5 functions per file.
-    In the following examples, the main.c files are shown as examples. You can use them to test your functions, but you don’t have to push them to your repo (if you do we won’t take them into account). We will use our own main.c files at compilation. Our main.c files might be different from the one shown in the examples.
-    The prototypes of all your functions should be included in your header file called holberton.h
-    Don’t forget to push your header file.
-    All your header files should be include guarded.
-    Note that we will not provide the_putchar function for this project
-=======
-# _printf project
-## made for Holberton Software Engineering program
+Return
 
-> Functions and macros allowed:
+If everything is successful, the function returns the num of chars printed.
 
-* write (man 2 write)
-* malloc (man 3 malloc)
-* free (man 3 free)
-* va_start (man 3 va_start)
-* va_end (man 3 va_end)
-* va_copy (man 3 va_copy)
-* va_arg (man 3 va_arg)
-
-> Compilation way:
-
-```
-$ gcc -Wall -Werror -Wextra -pedantic *.c
-```
+Format conversion
+| Format      | Description |
+| ----------- | ----------- |
+| c  | Print char values |
+| s  | Print strings |
+| d, i  | Print numbers [positive and negative]|
+| b  | Print nums converted to binary |
+| u  | Print nums as unsigned int |
+| o  | Print nums converted to octal |
+| x  | Print nums converted to hexa [uppercase]|
+| X  | Print nums converted to hexa [uppercase]|
+| %% | Print % character |
+| p | Print memory adress [pointers] |
+| r | Print string in reverse |
+| S | Print string and non-printable chars [\x + ASCII value in hexa] |
+| R | Print in rot13 |
 
 
-> Format specifiers:
-
-**Specifier - Type**
-
-<<<<<<< HEAD
-* c         - char
-* i         - integer
-* s         - string
-* d         - decimal
-* %         - percent
-* b         - binary
-* u         - octal
-* o         - decimal
-* x         - Hexadecimal lowercase
-* X         - Hexadecimal uppercase
-
->Authorized functions and macros
-
- *   write (man 2 write)
- *   malloc (man 3 malloc)
- *   free (man 3 free)
- *   va_start (man 3 va_start)
- *   va_end (man 3 va_end)
- *   va_copy (man 3 va_copy)
- *   va_arg (man 3 va_arg)
-
-> Compilation
-
-    Your code will be compiled this way:
-```
-$ gcc -Wall -Werror -Wextra -pedantic *.c
-```
-> Example of test file used:
-
-#include <limits.h>
-#include <stdio.h>
-#include "holberton.h"
-
-/**
- * main - Entry point
- *
- * Return: Always 0
- */
-int main(void)
-{
-<<<<<<< HEAD
-    int len;
-    int len2;
-    unsigned int ui;
-    void *addr;
-
-    len = _printf("Let's try to printf a simple sentence.\n");
-    len2 = printf("Let's try to printf a simple sentence.\n");
-    ui = (unsigned int)INT_MAX + 1024;
-    addr = (void *)0x7ffe637541f0;
-    _printf("Length:[%d, %i]\n", len, len);
-    printf("Length:[%d, %i]\n", len2, len2);
-    _printf("Negative:[%d]\n", -762534);
-    printf("Negative:[%d]\n", -762534);
-    _printf("Unsigned:[%u]\n", ui);
-    printf("Unsigned:[%u]\n", ui);
-    _printf("Unsigned octal:[%o]\n", ui);
-    printf("Unsigned octal:[%o]\n", ui);
-    _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
-    printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
-    _printf("Character:[%c]\n", 'H');
-    printf("Character:[%c]\n", 'H');
-    _printf("String:[%s]\n", "I am a string !");
-    printf("String:[%s]\n", "I am a string !");
-    _printf("Address:[%p]\n", addr);
-    printf("Address:[%p]\n", addr);
-    len = _printf("Percent:[%%]\n");
-    len2 = printf("Percent:[%%]\n");
-    _printf("Len:[%d]\n", len);
-    printf("Len:[%d]\n", len2);
-    _printf("Unknown:[%r]\n");
-    printf("Unknown:[%r]\n");
-    return (0);
-}
-> Expected return
-
-Let's try to printf a simple sentence.
-Let's try to printf a simple sentence.
-Length:[39, 39]
-Length:[39, 39]
-Negative:[-762534]
-Negative:[-762534]
-Unsigned:[2147484671]
-Unsigned:[2147484671]
-Unsigned octal:[20000001777]
-Unsigned octal:[20000001777]
-Unsigned hexadecimal:[800003ff, 800003FF]
-Unsigned hexadecimal:[800003ff, 800003FF]
-Character:[H]
-Character:[H]
-String:[I am a string !]
-String:[I am a string !]
-Address:[0x7ffe637541f0]
-Address:[0x7ffe637541f0]
-Percent:[%]
-Percent:[%]
-Len:[12]
-Len:[12]
-Unknown:[%r]
-Unknown:[%r]
+Examples
+1. Print char values
+- Input `_printf("%c", 'x')`
+- Output: `x`
+- Input `_printf("%c", 97)`
+- Output: `a`
+2. Print strings
+- Input `_printf("Hello%s\n", " Holberton!")`
+- Output: `Hello Holberton!`
+3. Print numbers
+- Input `_printf("%d", 1024)`
+- Output: `1024`
+- Input `_printf("%i", -2048)`
+- Output: `-2048`
+4. Print converted to binary
+- Input `_printf("%b\n", 15)`
+- Output: `1111`
+5. Print as unsigned int
+- Input `_printf("%u\n", 15)`
+- Output: `15`
+- Input `_printf("%u\n", -15)`
+- Output: `4294967281`
+6. Print converted to octal
+- Input `_printf("%o\n", 15)`
+- Output: `17`
+7. Print converted to hexa (lower and uppercase)
+- Input `_printf("%x\n", 30)`
+- Output: `1e`
+- Input `_printf("%X\n", 30)`
+- Output: `1E`
+8. Print %
+- Input `_printf("%%\n")`
+- Output: `%`
+- Input `_printf("%%-%%\n")`
+- Output: `%-%`
+9. Print memory adress [pointers]
+- Input `_printf("%p\n", ptr)`
+- Output: `0x7ffe637541f0`
+10. Print string in reverse
+- Input `_printf("Holberton - %r\n", "Holberton")`
+- Output: `Holberton - notrebloH`
+11.  Print string and non-printable chars
+- Input `_printf("%S\n", "Holberton\nSchool")`
+- Output: `Holberton\x0ASchool`
+12.  Print in rot13
+- Input `_printf("%R\n", "Holberton")`
+- Output: `Ubyoregba`
 
 
+### Project files
+- Alert: Almost all functions, modify the buffer and returns it. **(char \*)**
 
-=======
-        int len, len2, num = -10, num2 = -10;
-        unsigned int ui;
-        void *addr;
-        char *empty = NULL;
-        char p = '\0';
+| File        | Description |
+| ----------- | ----------- |
+|_itoa.c      | Tools functions:<br>**rev_string:** reverse a string passed as argument<br>**string_toupper**: convert to uppercase string passed as argument<br>**_calloc**: allocate memory and fills it with zeros<br>**_itoa**: convert num to base and return as string (unsigned int)<br>**adress**: convert num to base and return as string (long int)|
+| _printf.c   | Core of the project:<br>**_printf**:<br>1. Start the variadic list<br>2. Retrieves dictonary and allocate buffer<br>3. Iterates string argument and check for %, if % found then check if the next char match with valid format, in that case call the respective function of these format. If after % there is other char of non-valid format saves in buffer %. If % and the next char is null, returns -1. If % not found, saves in buffer each character<br>4. When finish loop for string argument, prints all in buffer **[print_buff]**<br>5. Free all memory allocated|
+| aux_funs.c  | Firtst group advanced functions:<br>**print_b**: add digits in base 2 to buffer<br>**print_u**: add unsigned integers to buffer<br>**print_o**: add digits in octal base  to buffer<br>**print_x**: add digits in hexadecimal base to buffer<br>**print_X**: add digits in hexadecimal uppercase base to buffer|
+| buff_funs.c | Print all chars saved in buffer:<br>**print_buff**: print buffer with null at the end and free buffer memory |
+| holberton.h | Header file:<br>**struct funs - filter**: Used for dictonary<br>**Include all prototypes**|
+| man_3_printf| Man page of _printf function|
+| print_funs.c| Basic functions:<br>**hand**: Dictonary. Creates array of filter's for all valid formats<br>**print_c**: add char to buffer<br>**print_str**: add string to buffer<br>**print_d**: print digits base 10<br>**pr**: add percentage to buffer|
+| printf_advance.c | Second group advanced functions:<br>**print_p**: add pointers - adress to buffer<br>**print_r**: add string in reverse to buffer<br>**print_rot13** add string in rot13 to buffer<br>**print_S**: add string and non-printable chars [\x + ASCII code]|
 
-        len = _printf("\"\\Let's try to printf a simple sentence.\n");
-        len2 = printf("\"\\Let's try to printf a simple sentence.\n");
-        ui = (unsigned int)INT_MAX + 1024;
-        addr = (void *)0x7ffe637541f0;
-        _printf("Length:[%d, %i]\n", len, len);
-        printf("Length:[%d, %i]\n", len2, len2);
-        _printf("String + Length:[%s, %i]\n", "\"\\Let's try to printf a simple sentence", len);
-        printf("String + Length:[%s, %i]\n", "\"\\Let's try to printf a simple sentence", len);
-        _printf("negative con d & i:[%d, %i]\n", num, num2);
-        printf("negative con d & i:[%d, %i]\n", num, num2);
-        _printf("Negative:[%d]\n", -762534);
-        printf("Negative:[%d]\n", -762534);
-        _printf("Unsigned:[%u]\n", ui);
-        printf("Unsigned:[%u]\n", ui);
-        _printf("Unsigned octal:[%o]\n", ui);
-        printf("Unsigned octal:[%o]\n", ui);
-        _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
-        printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
-        _printf("Character:[%c]\n", 'H');
-        printf("Character:[%c]\n", 'H');
-	_printf("String:[%s]\n", "I am a string !");
-        printf("String:[%s]\n", "I am a string !");
-        _printf("Address:[%p]\n", addr);
-        printf("Address:[%p]\n", addr);
-        len = _printf("Percent:[%%]\n");
-        len2 = printf("Percent:[%%]\n");
-        _printf("Len:[%d]\n", len);
-        printf("Len:[%d]\n", len2);
-        _printf("Unknown:[%r]\n");
-        printf("Unknown:[%r]\n");
-        len = _printf("Percent:[%%%%]\n");
-        len2 = printf("Percent:[%%%%]\n");
-        _printf("Len:[%d]\n", len);
-        printf("Len:[%d]\n", len2);
-        _printf("Empty string:[%s]\n", empty);
-        printf("Empty string printf original:[%s]\n", empty);
-        _printf("Empty string:[%c]\n", p);
-        printf("Empty string printf original:[%c]\n", p);
-        _printf("int:[%i]\n", INT_MIN);
-        printf("int:[%i]\n", INT_MIN);
-        return (0);
-}
+#### Authors
+* Anderson Castiblanco [Github](https://github.com/andergcp) - [LinkedIn](https://www.linkedin.com/in/andergcp)
+* Danilo Romero - [Githug](https://github.com/daniloromero) - [LinkedIn](https://www.linkedin.com/in/danilo-romero-beltran/)
 
-
----
-
-> Authors:
-
-[Danilo Romero] https://github.com/daniloromero
-[Anderson Castiblanco] https://github.com/andergcp
-
+[contributors-shield]: https://img.shields.io/github/contributors/andergcp/AirBnB_clone?style=social&logo=appveyor
+[contributors-url]: https://github.com/andergcp/printf/graphs/contributors
