@@ -102,7 +102,7 @@ Examples
 
 #### Authors
 * Anderson Castiblanco [Github](https://github.com/andergcp) - [LinkedIn](https://www.linkedin.com/in/andergcp)
-* Danilo Romero - [Githug](https://github.com/daniloromero) - [LinkedIn](https://www.linkedin.com/in/danilo-romero-beltran/)
+* Danilo Romero - [Github](https://github.com/daniloromero) - [LinkedIn](https://www.linkedin.com/in/danilo-romero-beltran/)
 
 [contributors-shield]: https://img.shields.io/github/contributors/andergcp/AirBnB_clone?style=social&logo=appveyor
 [contributors-url]: https://github.com/andergcp/printf/graphs/contributors
