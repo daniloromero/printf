@@ -86,20 +86,6 @@ Examples
 - Output: `Ubyoregba`
 
 
-### Project files
-- Alert: Almost all functions, modify the buffer and returns it. **(char \*)**
-
-| File        | Description |
-| ----------- | ----------- |
-|_itoa.c      | Tools functions:<br>**rev_string:** reverse a string passed as argument<br>**string_toupper**: convert to uppercase string passed as argument<br>**_calloc**: allocate memory and fills it with zeros<br>**_itoa**: convert num to base and return as string (unsigned int)<br>**adress**: convert num to base and return as string (long int)|
-| _printf.c   | Core of the project:<br>**_printf**:<br>1. Start the variadic list<br>2. Retrieves dictonary and allocate buffer<br>3. Iterates string argument and check for %, if % found then check if the next char match with valid format, in that case call the respective function of these format. If after % there is other char of non-valid format saves in buffer %. If % and the next char is null, returns -1. If % not found, saves in buffer each character<br>4. When finish loop for string argument, prints all in buffer **[print_buff]**<br>5. Free all memory allocated|
-| aux_funs.c  | Firtst group advanced functions:<br>**print_b**: add digits in base 2 to buffer<br>**print_u**: add unsigned integers to buffer<br>**print_o**: add digits in octal base  to buffer<br>**print_x**: add digits in hexadecimal base to buffer<br>**print_X**: add digits in hexadecimal uppercase base to buffer|
-| buff_funs.c | Print all chars saved in buffer:<br>**print_buff**: print buffer with null at the end and free buffer memory |
-| holberton.h | Header file:<br>**struct funs - filter**: Used for dictonary<br>**Include all prototypes**|
-| man_3_printf| Man page of _printf function|
-| print_funs.c| Basic functions:<br>**hand**: Dictonary. Creates array of filter's for all valid formats<br>**print_c**: add char to buffer<br>**print_str**: add string to buffer<br>**print_d**: print digits base 10<br>**pr**: add percentage to buffer|
-| printf_advance.c | Second group advanced functions:<br>**print_p**: add pointers - adress to buffer<br>**print_r**: add string in reverse to buffer<br>**print_rot13** add string in rot13 to buffer<br>**print_S**: add string and non-printable chars [\x + ASCII code]|
-
 #### Authors
 * Anderson Castiblanco [Github](https://github.com/andergcp) - [LinkedIn](https://www.linkedin.com/in/andergcp)
 * Danilo Romero - [Github](https://github.com/daniloromero) - [LinkedIn](https://www.linkedin.com/in/danilo-romero-beltran/)
