@@ -66,7 +66,7 @@ void unknown_i(char p, char *buffer, unsigned int *size)
  */
 void print_rev(va_list list, char *buffer, unsigned int *size)
 {
-	char *str = va_arg(list, int);
+	char *str = va_arg(list, char *);
 	int counter = 0;
 
 	if (str == NULL)
@@ -90,9 +90,10 @@ void print_rev(va_list list, char *buffer, unsigned int *size)
  */
 void print_rot13(va_list list, char *buffer, unsigned int *size)
 {
-	char *str = va_arg(list, int);
+	char *str = NULL;
 	int counter = 0;
 
+	str =  va_arg(list, char *);
 	if (str == NULL)
 		str = "(null)";
 	while (str[counter])

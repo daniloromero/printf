@@ -56,7 +56,7 @@ void print_int(va_list list, char *buffer, unsigned int *size)
  */
 void print_str(va_list list, char *buffer, unsigned int *size)
 {
-	char *str = va_arg(list, int);
+	char *str = va_arg(list, char *);
 	int counter = 0;
 
 	if (str == NULL)
